@@ -18,7 +18,7 @@ y = c(0.10 + 0.25 * runif(N1),
 ## cluster
 z = c(rep(0, N1), rep(0, N2), rep(0, N3))
      
-df <- data.frame(x=x, y=y, cluster=z)
+df <- data.frame(x=x, y=y)
 
 
 ##
@@ -171,27 +171,45 @@ dev.off()
 ##   Canopy
 ##
 
-df <- data.frame(x=x, y=y, z=z)
+par(pty="s")
+jpeg(filename = "agrupamiento-4.jpg",
+     width = 500, height = 500, units = "px", pointsize = 12,
+     quality = 100,
+     bg = "white")
+  
+plot(s$x, s$y, col = 'white', bg = 'black', 
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)
+box(col="darkgray")
+axis(1, col="black", col.axis="black", cex.axis=0.9)
+axis(2, col="black", col.axis="black", cex.axis=0.9)
 
-L = 0.2
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)
 
+
+
+df$z = 0
+
+L = 0.15
+library(plotrix)
 while(nrow(subset(df, z == 0)) > 0)
 {
 	
 	## puntos no asignados a un canopy
 	s = subset(df, z == 0)
-	x = s$x[1]
-	y = s$y[1]
+	n = sample(1:nrow(s), 1)
+	x = s$x[n]
+	y = s$y[n]
 	
 	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)
-	df$z[df$z != 0 & df$dist <= L] = max(df$z) + 1
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1
 	
+	draw.circle(x, y, L, nv = 1000, border = NULL, col = NA, lty = 1, lwd = 1)
 	
 }
 cat('termine')
 
 
-
+dev.off()
 
 
 
