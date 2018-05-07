@@ -1,0 +1,38 @@
+Temática del curso inicial para Ruta N - Alcaldia
+
+DIA 1
+1.- Concepto de probabilidad como frecuencia
+    y aplicación a la construcción de clasificadores
+    basados en reglas.
+
+2.- Aplicación del concepto de probabilidad aplicado 
+    A la construcción de reglas 
+    de asociación y sistemas de recomendación
+    (Algoritmo Apriori).
+
+DIA 2
+3.- Teorema de Bayes y aplicación a la 
+    construcción de clasificadores con aplicación
+    a minería de texto.
+
+DIA 3
+4.- Conceptos básicos sobre distribuciones 
+    teóricas de probabilidad, 
+    parámetros e intervalos de confianza. 
+
+DIA 4
+5.- Pruebas de hipótesis
+
+6.- Análisis exploratorio de datos y su uso 
+    en inteligencia de negocios.   
+    
+DIA 5.
+7.- Ajuste de distribuciones y generación de
+    aleatorios y aplicaciones en simulación y 
+    analítica prescriptiva.
+
+
+DIA 6.
+8.- Aplicación de la teoría de probabilidad en 
+    estructuración de decisiones usando árboles 
+    De decisión 
