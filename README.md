@@ -9,7 +9,7 @@ El conocimiento de la estadística es uno de los pilares fundamentales del model
 
 El siguiente grafo muestra donde encaja este tutorial en el proceso.
 
-![readme-R-ETL](images/readme-stats.jpg)
+![readme.jpg](images/readme.jpg)
 
 ## Objetivos
 
