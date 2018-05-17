@@ -1,0 +1,1948 @@
+set.seed(12345)#
+#
+N1 <- 25#
+N2 <- 30#
+N3 <- 40#
+#
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+z = c(rep(0, N1), rep(1, N2), rep(2, N3))#
+df <- data.frame(x=x, y=y, z=z)#
+### Grafica   #
+plot(s$x, s$y, col = 'white', bg = 'black', xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE,)#
+box(col="gray")#
+#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)#
+## puntos fuera de la muestra#
+x = c(0.06, 0.42, 0.60, 0.36) #
+y = c(0.50, 0.76, 0.10, 0.49)#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+df$dist4 = sqrt((df$x - x[4])^2 + (df$y - y[4])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+n4 = order(df$dist4)#
+## rayos#
+for(index in 1:8)#
+{#
+	lines(c(x[1], df$x[n1[index]]), c(y[1], df$y[n1[index]]), col = 'gray')#
+	lines(c(x[2], df$x[n2[index]]), c(y[2], df$y[n2[index]]), col = 'gray')#
+	lines(c(x[3], df$x[n3[index]]), c(y[3], df$y[n3[index]]), col = 'gray')#
+	lines(c(x[4], df$x[n4[index]]), c(y[4], df$y[n4[index]]), col = 'gray')#
+}#
+#
+## puntos#
+s = subset(df, z == 0); points(s$x, s$y, col='blue',  bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+s = subset(df, z == 1); points(s$x, s$y, col='red',   bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+#
+points(x[1], y[1], col='black', bg = 'blue', lwd=2, pch=22, cex=1.5)#
+points(x[2], y[2], col='black', bg = 'red', lwd=2, pch=22, cex=1.5)#
+points(x[3], y[3], col='black', bg = 'green', lwd=2, pch=22, cex=1.5)#
+points(x[4], y[4], col='black', bg = 'red', lwd=2, pch=22, cex=1.5)
+set.seed(12345)#
+#
+N1 <- 25#
+N2 <- 30#
+N3 <- 40#
+#
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+z = c(rep(0, N1), rep(1, N2), rep(2, N3))#
+df <- data.frame(x=x, y=y, z=z)
+plot(s$x, s$y, col = 'white', bg = 'black', xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE,)#
+box(col="gray")
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)
+x = c(0.06, 0.42, 0.60, 0.36) #
+y = c(0.50, 0.76, 0.10, 0.49)#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+df$dist4 = sqrt((df$x - x[4])^2 + (df$y - y[4])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+n4 = order(df$dist4)
+## rayos#
+for(index in 1:8)#
+{#
+	lines(c(x[1], df$x[n1[index]]), c(y[1], df$y[n1[index]]), col = 'gray')#
+	lines(c(x[2], df$x[n2[index]]), c(y[2], df$y[n2[index]]), col = 'gray')#
+	lines(c(x[3], df$x[n3[index]]), c(y[3], df$y[n3[index]]), col = 'gray')#
+	lines(c(x[4], df$x[n4[index]]), c(y[4], df$y[n4[index]]), col = 'gray')#
+}
+## puntos#
+s = subset(df, z == 0); points(s$x, s$y, col='blue',  bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+s = subset(df, z == 1); points(s$x, s$y, col='red',   bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'white', lwd = 2, pch = 19, cex = 0.5)
+points(x[1], y[1], col='black', bg = 'blue', lwd=2, pch=22, cex=1.5)#
+points(x[2], y[2], col='black', bg = 'red', lwd=2, pch=22, cex=1.5)#
+points(x[3], y[3], col='black', bg = 'green', lwd=2, pch=22, cex=1.5)#
+points(x[4], y[4], col='black', bg = 'red', lwd=2, pch=22, cex=1.5)
+set.seed(12345)#
+#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+z = c(rep(0, N1), rep(1, N2), rep(2, N3))#
+df <- data.frame(x=x, y=y, z=z)#
+### Grafica   #
+plot(s$x, s$y, col = 'white', bg = 'black', xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE,)#
+box(col="gray")#
+#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)#
+## puntos fuera de la muestra#
+x = c(0.06, 0.42, 0.60, 0.36) #
+y = c(0.50, 0.76, 0.10, 0.49)#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+df$dist4 = sqrt((df$x - x[4])^2 + (df$y - y[4])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+n4 = order(df$dist4)#
+## rayos#
+for(index in 1:8)#
+{#
+	lines(c(x[1], df$x[n1[index]]), c(y[1], df$y[n1[index]]), col = 'gray')#
+	lines(c(x[2], df$x[n2[index]]), c(y[2], df$y[n2[index]]), col = 'gray')#
+	lines(c(x[3], df$x[n3[index]]), c(y[3], df$y[n3[index]]), col = 'gray')#
+	lines(c(x[4], df$x[n4[index]]), c(y[4], df$y[n4[index]]), col = 'gray')#
+}#
+#
+## puntos#
+s = subset(df, z == 0); points(s$x, s$y, col='blue',  bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+s = subset(df, z == 1); points(s$x, s$y, col='red',   bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'white', lwd = 2, pch = 19, cex = 0.5)#
+#
+points(x[1], y[1], col='black', bg = 'blue', lwd=2, pch=22, cex=1.5)#
+points(x[2], y[2], col='black', bg = 'red', lwd=2, pch=22, cex=1.5)#
+points(x[3], y[3], col='black', bg = 'green', lwd=2, pch=22, cex=1.5)#
+points(x[4], y[4], col='black', bg = 'red', lwd=2, pch=22, cex=1.5)
+set.seed(12345)#
+#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+z = c(rep(0, N1), rep(1, N2), rep(2, N3))#
+df <- data.frame(x=x, y=y, z=z)#
+### Grafica   #
+plot(s$x, s$y, col = 'white', bg = 'black', xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE,)#
+box(col="gray")#
+#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)
+### Grafica   #
+plot(s$x, s$y, col = 'white', bg = 'black', xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE,)#
+box(col="gray")#
+#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+### Grafica 1#
+#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 1300, height = 400, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="gray")#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)#
+#
+points(df$x, df$y, col='black', bg = 'blue', lwd=2, pch=22, cex=1.5)#
+#
+dev.off()
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+### Grafica 1#
+#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 400, height = 400, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="gray")#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)#
+#
+points(df$x, df$y, col='black', bg = 'blue', lwd=2, pch=22, cex=1.5)#
+#
+dev.off()
+### Grafica 1#
+#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 400, height = 400, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="gray")#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)#
+#
+points(df$x, df$y, col='black', bg = 'blue', lwd=2, pch=21, cex=1.0)#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="gray")#
+axis(1, col="gray", col.axis="gray", cex.axis=0.6)#
+axis(2, col="gray", col.axis="gray", cex.axis=0.6)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.8)#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="gray")#
+axis(1, col="darkgray", col.axis="darkgray", cex.axis=0.9)#
+axis(2, col="darkgray", col.axis="darkgray", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.8)#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="darkgray", col.axis="darkgray", cex.axis=0.9)#
+axis(2, col="darkgray", col.axis="darkgray", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.8)#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="darkgray", cex.axis=0.9)#
+axis(2, col="darkgray", col.axis="darkgray", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.8)#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="darkgray", cex.axis=0.9)#
+axis(2, col="black", col.axis="darkgray", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.8)#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()
+## clusters iniciales#
+x = c(0.48, 0.29, 0.13) #
+y = c(0.20, 0.42, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue', lwd=1, pch=22, cex=1.2)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=1.2)#
+points(x[3], y[3], col='red', bg = 'red', lwd=1, pch=22, cex=1.2)#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue', lwd=1, pch=22, cex=1.5)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=1.5)#
+points(x[3], y[3], col='red', bg = 'red', lwd=1, pch=22, cex=1.5)#
+dev.off()
+## clusters iniciales#
+x = c(0.48, 0.29, 0.13) #
+y = c(0.20, 0.42, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=1.7)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=1.7)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=1.7)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 && df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 && df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 && df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); points(s$x, s$y, col='blue',  bg = 'blue', lwd = 2, pch = 21, cex = 1.7)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'green', lwd = 2, pch = 21, cex = 1.7)#
+s = subset(df, z == 3); points(s$x, s$y, col='red',   bg = 'red', lwd = 2, pch = 21, cex = 1.7)#
+dev.off()
+df
+1 < 2 & 3 < 1
+x = c(0.48, 0.29, 0.13) #
+y = c(0.20, 0.42, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=1.7)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=1.7)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=1.7)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); points(s$x, s$y, col='blue',  bg = 'blue', lwd = 2, pch = 21, cex = 1.7)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'green', lwd = 2, pch = 21, cex = 1.7)#
+s = subset(df, z == 3); points(s$x, s$y, col='red',   bg = 'red', lwd = 2, pch = 21, cex = 1.7)#
+dev.off()
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+###
+## Grafica 1#
+##   Puntos sin agrupar#
+###
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=1.7)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=1.7)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=1.7)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 3); points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+dev.off()
+df
+x = c(0.48, 0.29, 0.13) #
+y = c(0.20, 0.42, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=1.7)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=1.7)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=1.7)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 3); points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 3); points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+dev.off()
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.29, 0.06) #
+y = c(0.20, 0.42, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 3); points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+dev.off()
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 2); points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+s = subset(df, z == 3); points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+dev.off()
+x
+len(x)
+length(x)
+?lines
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+n1 = order(df$dist1)#
+n2 = order(df$dist2)#
+n3 = order(df$dist3)#
+#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], df$y[index]), col = 'gray')#
+#
+s = subset(df, z == 2); #
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], df$y[index]), col = 'gray')#
+#
+s = subset(df, z == 3); #
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], df$y[index]), col = 'gray')#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+#
+s = subset(df, z == 2); #
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+s = subset(df, z == 3); #
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+for(iter in 1:10)#
+{#
+	s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+	s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+	s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+#
+	df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+	df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+	df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+	## computa los puntos pertenecientes a cada cluster#
+	df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+	df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+	df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+}#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 600, height = 600, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+###
+## Grafica 1#
+##   Puntos sin agrupar#
+###
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 750, height = 750, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()#
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 750, height = 750, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()#
+###
+## Grafica 3#
+##   Primera iteracion K-means#
+###
+#
+for(iter in 1:10)#
+{#
+	s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+	s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+	s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+#
+	df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+	df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+	df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+	## computa los puntos pertenecientes a cada cluster#
+	df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+	df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+	df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+}#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 750, height = 750, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+###
+## Grafica 1#
+##   Puntos sin agrupar#
+###
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()#
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()#
+###
+## Grafica 3#
+##   Primera iteracion K-means#
+###
+#
+for(iter in 1:10)#
+{#
+	s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+	s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+	s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+#
+	df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+	df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+	df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+	## computa los puntos pertenecientes a cada cluster#
+	df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+	df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+	df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+}#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+###
+## Grafica 1#
+##   Puntos sin agrupar#
+###
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 800, height = 800, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()#
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 800, height = 800, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()#
+###
+## Grafica 3#
+##   Primera iteracion K-means#
+###
+#
+for(iter in 1:10)#
+{#
+	s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+	s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+	s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+#
+	df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+	df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+	df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+	## computa los puntos pertenecientes a cada cluster#
+	df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+	df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+	df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+}#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 800, height = 800, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+###
+## Grafica 1#
+##   Puntos sin agrupar#
+###
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()#
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()#
+###
+## Grafica 3#
+##   Primera iteracion K-means#
+###
+#
+for(iter in 1:10)#
+{#
+	s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+	s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+	s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+#
+	df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+	df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+	df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+	## computa los puntos pertenecientes a cada cluster#
+	df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+	df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+	df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+}#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+df <- data.frame(x=x, y=y, z=z)#
+#
+L = 0.2#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[0]#
+	y = s$y[0]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y^2)#
+	df$z[df$z != 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+df <- data.frame(x=x, y=y, z=z)#
+#
+L = 0.2#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[0]#
+	y = s$y[0]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z != 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+df
+df <- data.frame(x=x, y=y, z=z)#
+#
+L = 0.2#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[1]#
+	y = s$y[1]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z != 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+df
+###
+#
+df <- data.frame(x=x, y=y, z=z)#
+#
+L = 0.2#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[1]#
+	y = s$y[1]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+df
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y, cluster=z)#
+###
+## Grafica 1#
+##   Puntos sin agrupar#
+###
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()#
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()#
+###
+## Grafica 3#
+##   K-means#
+###
+#
+for(iter in 1:10)#
+{#
+	s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+	s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+	s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+#
+	df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+	df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+	df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+	## computa los puntos pertenecientes a cada cluster#
+	df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+	df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+	df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+}#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+df
+x
+y
+set.seed(12345)#
+#
+## cantidad de puntos por cluster#
+N1 <- 20#
+N2 <- 20#
+N3 <- 20#
+#
+## datos aleatorios #
+x = c(0.03 + 0.21 * runif(N1),#
+      0.10 + 0.20 * runif(N2),#
+      0.60 + 0.24 * runif(N3))#
+y = c(0.10 + 0.25 * runif(N1),#
+      0.65 + 0.28 * runif(N2),#
+      0.20 + 0.30 * runif(N3))#
+#
+## cluster#
+z = c(rep(0, N1), rep(0, N2), rep(0, N3))#
+df <- data.frame(x=x, y=y)#
+###
+## Grafica 1#
+##   Puntos sin agrupar#
+###
+par(pty="s")#
+jpeg(filename = "agrupamiento-1.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+#
+dev.off()#
+###
+## Grafica 2#
+##   Puntos sin agrupar#
+###
+#
+## clusters iniciales#
+x = c(0.48, 0.25, 0.06) #
+y = c(0.20, 0.51, 0.62)#
+#
+df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+## computa los puntos pertenecientes a cada cluster#
+df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+par(pty="s")#
+jpeg(filename = "agrupamiento-2.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()#
+###
+## Grafica 3#
+##   K-means#
+###
+#
+for(iter in 1:10)#
+{#
+	s = subset(df, z == 1);  x[1] = mean(s$x); y[1] = mean(s$y)#
+	s = subset(df, z == 2);  x[2] = mean(s$x); y[2] = mean(s$y)#
+	s = subset(df, z == 3);  x[3] = mean(s$x); y[3] = mean(s$y)#
+#
+	df$dist1 = sqrt((df$x - x[1])^2 + (df$y - y[1])^2)#
+	df$dist2 = sqrt((df$x - x[2])^2 + (df$y - y[2])^2)#
+	df$dist3 = sqrt((df$x - x[3])^2 + (df$y - y[3])^2)#
+#
+	## computa los puntos pertenecientes a cada cluster#
+	df$z[df$dist1 <= df$dist2 & df$dist1 <= df$dist3] = 1#
+	df$z[df$dist2 <= df$dist1 & df$dist2 <= df$dist3] = 2#
+	df$z[df$dist3 <= df$dist1 & df$dist3 <= df$dist2] = 3#
+}#
+par(pty="s")#
+jpeg(filename = "agrupamiento-3.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+## grafica los puntos de cada cluster#
+s = subset(df, z == 1); #
+for(index in 1:nrow(s))#
+	lines(c(x[1], s$x[index]), c(y[1], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='blue',  bg = 'blue',  lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 2); #
+for(index in 1:nrow(s))#
+	lines(c(x[2], s$x[index]), c(y[2], s$y[index]), col = 'gray')#
+#
+points(s$x, s$y, col='green', bg = 'green', lwd = 1, pch = 21, cex = 0.9)#
+#
+s = subset(df, z == 3); #
+for(index in 1:nrow(s))#
+	lines(c(x[3], s$x[index]), c(y[3], s$y[index]), col = 'gray')#
+points(s$x, s$y, col='red',   bg = 'red',   lwd = 1, pch = 21, cex = 0.9)#
+## centros de los clusters#
+points(x[1], y[1], col='blue',  bg = 'blue',  lwd=1, pch=22, cex=2.)#
+points(x[2], y[2], col='green', bg = 'green', lwd=1, pch=22, cex=2.)#
+points(x[3], y[3], col='red',   bg = 'red',   lwd=1, pch=22, cex=2.)#
+dev.off()
+df
+df$z = 0#
+#
+L = 0.2#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[1]#
+	y = s$y[1]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+df
+df$z = 0#
+#
+L = 0.25#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[1]#
+	y = s$y[1]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+df
+df$z = 0#
+#
+L = 0.2#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[1]#
+	y = s$y[1]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+df
+max(df$z)
+df$z = 0#
+#
+L = 0.15#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	x = s$x[1]#
+	y = s$y[1]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1#
+}#
+cat('termine')
+max(df$z)
+df
+sample(1:10, 1)
+par(pty="s")#
+jpeg(filename = "agrupamiento-4.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+df$z = 0#
+#
+L = 0.15#
+#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	n = sample(1:nrow(s), 1)#
+	x = s$x[n]#
+	y = s$y[n]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1#
+	draw.circle(x, y, L, nv = 1000, border = NULL, col = NA, lty = 1, lwd = 1)#
+}#
+cat('termine')#
+dev.off()
+par(pty="s")#
+jpeg(filename = "agrupamiento-4.jpg",#
+     width = 500, height = 500, units = "px", pointsize = 12,#
+     quality = 100,#
+     bg = "white")#
+plot(s$x, s$y, col = 'white', bg = 'black', #
+     xlim=c(0,1), ylim=c(0,1), ylab='',  xlab='', axes=FALSE)#
+box(col="darkgray")#
+axis(1, col="black", col.axis="black", cex.axis=0.9)#
+axis(2, col="black", col.axis="black", cex.axis=0.9)#
+#
+points(df$x, df$y, col='black', bg = 'black', lwd=1, pch=21, cex=0.9)#
+df$z = 0#
+#
+L = 0.15#
+library(plotrix)#
+while(nrow(subset(df, z == 0)) > 0)#
+{#
+	## puntos no asignados a un canopy#
+	s = subset(df, z == 0)#
+	n = sample(1:nrow(s), 1)#
+	x = s$x[n]#
+	y = s$y[n]#
+	df$dist = sqrt((df$x - x)^2 + (df$y - y)^2)#
+	df$z[df$z == 0 & df$dist <= L] = max(df$z) + 1#
+	draw.circle(x, y, L, nv = 1000, border = NULL, col = NA, lty = 1, lwd = 1)#
+}#
+cat('termine')#
+dev.off()
